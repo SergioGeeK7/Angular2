@@ -1,0 +1,16 @@
+.cloud-app a {
+    display: block;
+    padding: 20px 0;
+}
+a {
+  color: #00a4df;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+*, :after, :before {
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
