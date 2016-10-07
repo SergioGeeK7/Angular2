@@ -53,6 +53,7 @@ export class HeroSearchComponent implements OnInit {
      * 
      */
     ngOnInit() :void{
+        // this will emit events 
         this.heroes = 
             this.searchTerms
             .debounceTime(300) // wait for 300ms pause in events
