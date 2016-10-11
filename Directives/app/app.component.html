@@ -6,3 +6,11 @@
   <input type="radio" name="colors" (click)="color='cyan'">Cyan
 </div>
 <p [myHighlight]="color" [defaultColor]="'violet'">Highlight me!</p>
+<br>
+<p *myUnless="condition">
+  condition is false and myUnless shows
+</p>
+
+<p *myUnless="!condition">
+  condition is true and myUnless hide
+</p>
