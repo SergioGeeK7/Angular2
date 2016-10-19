@@ -11,7 +11,8 @@ import { Hero } from './hero'
     selector: 'hero-search',
     templateUrl: 'hero-search.component.html',
     styleUrls: [ 'hero-search.component.css' ],
-    providers: [HeroSearchService]
+    providers: [HeroSearchService] // to inject the service
+    // Registering at a component level means you get a new instance of the service with each new instance of that component.
 })
 export class HeroSearchComponent implements OnInit {
     heroes: Observable<Hero[]>;

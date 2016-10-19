@@ -26,10 +26,13 @@ import { HeroSearchComponent } from './hero-search.component'
   imports:      [ 
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule, // modules than export clasess 
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     routing
   ],
+  //bootstrap - the main application view, called the root component, that hosts all other app views. Only the root module should set this bootstrap property.
+  //providers // creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app.
+              // array of dependency injection (constructor) that providers for services that the component requires
   declarations: [ 
     AppComponent,
     HeroesComponent,
@@ -38,7 +41,7 @@ import { HeroSearchComponent } from './hero-search.component'
     HeroSearchComponent
    ],
    providers:[
-     HeroService // injectable services ; we need this in some others views
+     HeroService // injectable services ; we need this in some others views, global injectable service 
    ],
   bootstrap:    [ AppComponent ]
 })
