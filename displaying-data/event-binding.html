@@ -1,0 +1,25 @@
+<button (click)="onSave()">Save</button>
+<!-- `myClick` is an event on the custom `ClickDirective` -->
+<div (myClick)="clickMessage=$event">click with myClick</div>
+
+
+<input [value]="currentHero.firstName"
+       (input)="currentHero.firstName=$event.target.value" >
+
+
+--------
+
+// This component make a request but it can't actually delete a hero.
+
+deleteRequest = new EventEmitter<Hero>();
+
+delete() {
+  this.deleteRequest.emit(this.hero);
+}
+
+
+<hero-detail (deleteRequest)="deleteHero($event)" [hero]="currentHero"></hero-detail>
+ ----------
+ 
+<my-sizer [(size)]="fontSizePx"></my-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>

@@ -1,0 +1,20 @@
+<h3>
+  {{title}}
+  <img src="{{heroImageUrl}}" style="height:30px">
+</h3>
+
+We use interpolation to weave calculated 
+strings into the text between HTML element tags
+and within attribute assignments.
+
+More generally, the material between the braces
+is a template expression that Angular first evaluates 
+and then converts to a string. The following interpolation 
+illustrates
+the point by adding the two numbers within braces:
+
+<!-- "The sum of 1 + 1 is 2" -->
+<p>The sum of 1 + 1 is {{1 + 1}}</p>
+<!-- "The sum of 1 + 1 is not 4" -->
+<p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</p>
+

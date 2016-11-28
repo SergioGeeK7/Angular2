@@ -1,0 +1,82 @@
+[disabled]="isUnchanged", we know we
+ are referring to that component's isUnchanged property.
+ 
+ 
+ <p><img src="{{heroImageUrl}}"> is the <i>interpolated</i> image.</p>
+<p><img [src]="heroImageUrl"> is the <i>property bound</i> image.</p>
+
+<p><span>"{{title}}" is the <i>interpolated</i> title.</span></p>
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+
+
+<div [ngStyle]="setStyles()">
+  This div is italic, normal weight, and extra large (24px).
+</div>
+
+ 
+
+ We’ll see template statements in the event binding section
+ appearing in quotes to 
+ the right of the = symbol as in (event)="statement()".
+
+ The HTML attribute and the DOM 
+ property are not the same thing, 
+ even when they have the same name.
+
+
+----
+
+<button [style.color] = "isSpecial ? 'red': 'green'">Red</button>
+<button [style.background-color]="canSave ? 'cyan': 'grey'" >Save</button>
+
+
+<span [ngSwitch]="toeChoice">
+  <span *ngSwitchCase="'Eenie'">Eenie</span>
+  <span *ngSwitchCase="'Meanie'">Meanie</span>
+  <span *ngSwitchCase="'Miney'">Miney</span>
+  <span *ngSwitchCase="'Moe'">Moe</span>
+  <span *ngSwitchDefault>other</span>
+</span>
+
+We bind the parent NgSwitch directive to an expression returning a switch value. The value is a string in this example, but it can be a value of any type.
+
+
+<hero-detail *ngFor="let hero of heroes" [hero]="hero"></hero-detail>
+
+
+-----
+
+
+<!-- phone refers to the input element; pass its `value` to an event handler -->
+<input #phone placeholder="phone number">
+<button (click)="callPhone(phone.value)">Call</button>
+
+<!-- fax refers to the input element; pass its `value` to an event handler -->
+<input ref-fax placeholder="fax number">
+<button (click)="callFax(fax.value)">Fax</button>
+
+
+<form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">
+  <button type="submit" [disabled]="!theForm.form.valid">Submit</button>
+</form>
+
+----------
+<!--PIPES-->
+
+<!-- pipe with configuration argument => "February 25, 1970" -->
+<div>Birthdate: {{currentHero?.birthdate | date:'longDate'}}</div>
+<div>{{currentHero | json}}</div>
+
+
+<!-- No hero, no problem! -->
+<div>The null hero's name is {{nullHero?.firstName}}</div>
+<div>The null hero's name is {{nullHero && nullHero.firstName}}
+</div>
+
+----------
+
+
+
+
+
+
